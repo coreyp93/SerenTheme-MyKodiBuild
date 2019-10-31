@@ -191,7 +191,7 @@
 	        <control type="image">
         	    <visible>true</visible>
                     <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-                    <colordiffuse>50000025</colordiffuse>
+                    <colordiffuse>50000000</colordiffuse>
                 </control>
                 <control type="label">
                     <top>20</top>
