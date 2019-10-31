@@ -120,7 +120,7 @@
                     <label>Year: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR] | Rating: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]
                     </label>
                 </control>
-                <control type="label">
+				<control type="label">
                     <top>120</top>
                     <width>400</width>
                     <font>font12</font>
