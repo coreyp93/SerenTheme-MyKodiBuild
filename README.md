@@ -1,4 +1,4 @@
-# Seren Theme - MyKodiBuild
+# MyKodiBuild Theme for Seren
 A Theme For Seren 
 * **Designed to work with Auramod skin**  
 * **Has ClearArt** 
