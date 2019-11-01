@@ -1,12 +1,12 @@
-# SerenTheme-MyKodiBuild
+# Seren Theme - MyKodiBuild
 A Theme For Seren 
-* Designed to work with Auramod skin  
-* Has ClearArt 
-* Has icons for Resolution 
+* **Designed to work with Auramod skin**  
+* **Has ClearArt** 
+* **Has icons for Resolution** 
 
-**Requirements:**
-* **Seren - 1.3.6 or greater**
-* **AuraMod - Latest Repo version or higher**
+***Requirements:***
+* ***Seren - 1.3.6 or greater***
+* ***AuraMod - Latest Repo version or higher***
 
 **_This theme Has not been tested and won't be supported on any skin besides AuraMod , use at your on risk with other skins._**
 
