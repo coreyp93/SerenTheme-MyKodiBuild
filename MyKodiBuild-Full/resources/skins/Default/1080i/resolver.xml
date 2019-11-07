@@ -73,17 +73,18 @@
             <width>1920</width>
             <height>1080</height>
             <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>CC000000</colordiffuse>
+            <colordiffuse>AA000000</colordiffuse>
         </control>
 
 
         <!-- Seren Logo -->
         <control type="image" id="1001">
-            <top>-50</top>
-            <left>880</left>
-            <width>150</width>
+            <top>-200</top>
+            <left>830</left>
+            <width>250</width>
             <aspectratio>keep</aspectratio>
             <texture>$INFO[Window().Property(seren.logo)]</texture>
+			<colordiffuse>AAFFFFFF</colordiffuse>
         </control>
         <control>
             <top>600</top>
@@ -92,12 +93,12 @@
 
         <control type="label">
             <left>0</left>
-            <top>300</top>
+            <top>100</top>
             <width>100%</width>
-            <font>font12</font>
+            <font>font16</font>
             <align>center</align>
             <aligny>center</aligny>
-            <textcolor>FFDDDDDD</textcolor>
+            <textcolor>DDDAA520</textcolor>
             <label>$INFO[Window().Property(notification_text)]</label>
         </control>
         <control type="group">
@@ -106,39 +107,39 @@
             <width>100%</width>
             <!-- Information -->
             <control type="label">
+                <top>-400</top>
+                <left>-760</left>
+                <width>1920</width>
+                <font>font16</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>auto</width>
+                <textcolor>EEDAA520</textcolor>
+                <label>[CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(release_title)][/COLOR][/CAPITALIZE]</label>
+            </control>
+
+            <control type="label">
+                <top>-200</top>
+                <left>-760</left>
+                <width>1920</width>
+                <font>font16</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>auto</width>
+                <textcolor>EEDAA520</textcolor>
+                <label>Provider:[CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(debrid_provider)][/COLOR][/CAPITALIZE] | Source:[CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_provider)][/COLOR][/CAPITALIZE]</label>
+            </control>
+
+            <control type="label">
                 <top>-300</top>
                 <left>-760</left>
                 <width>1920</width>
-                <font>font12</font>
+                <font>font16</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
-                <label>[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(release_title)][/COLOR]</label>
-            </control>
-
-            <control type="label">
-                <top>-220</top>
-                <left>-760</left>
-                <width>1920</width>
-                <font>font12</font>
-                <align>center</align>
-                <aligny>center</aligny>
-                <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
-                <label>Provider: [UPPERCASE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(debrid_provider)][/COLOR][/UPPERCASE] | Source:  [UPPERCASE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_provider)][/COLOR][/UPPERCASE]</label>
-            </control>
-
-            <control type="label">
-                <top>-140</top>
-                <left>-760</left>
-                <width>1920</width>
-                <font>font12</font>
-                <align>center</align>
-                <aligny>center</aligny>
-                <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
-                <label>Resolution: [UPPERCASE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_resolution)][/COLOR][UPPERCASE] | Info: [UPPERCASE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_info)][/COLOR][/UPPERCASE]</label>
+                <textcolor>EEDAA520</textcolor>
+                <label>Resolution:[CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_resolution)][/COLOR][CAPITALIZE] | Info:[CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_info)][/COLOR][/CAPITALIZE]</label>
             </control>
 
         </control>

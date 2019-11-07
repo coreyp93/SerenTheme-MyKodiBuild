@@ -74,335 +74,1915 @@
             <width>1920</width>
             <height>1080</height>
             <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>CC000000</colordiffuse>
+            <colordiffuse>AA000000</colordiffuse>
         </control>
 
 
         <!-- Side Info -->
+	<control type="group">
+		<!--control type="image">
+				<top>12</top>
+				<bottom>12</bottom>
+				<left>1270</left>
+				<width>640</width>
+				<height>1056</height>
+				<texture colordiffuse="gold" border="5">common/outline.png</texture>
+		</control-->
         <control type="group">
-            <top>120</top>
-            <left>1400</left>
+            <top>15</top>
+            <left>1280</left>
             <control type="label">
-                <top>-900</top>
-                <width>400</width>
+                <top>640</top>
+				<left>-95</left>
+                <width>300</width>
                 <font>font12</font>
-                <textcolor>AAFFFFFF</textcolor>
+                <textcolor>FFFFD700</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
                 <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
-                <label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] | Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
+                <label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] </label>
+            </control>
+			<control type="label">
+                <top>700</top>
+				<left>-100</left>
+                <width>300</width>
+                <font>font12</font>
+                <textcolor>FFFFD700</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                <label>Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
             </control>
             <control type="image">
-                <width>400</width>
-                <height>600</height>
-                <top>50</top>
+				<left>20</left>
+                <width>550</width>
+                <height>825</height>
+                <top>0</top>
                 <texture background="true">$INFO[Window().Property(item.art.poster)]</texture>
             </control>
 
             <control type="group">
-                <top>420</top>
+                <top>640</top>
+				<left>80</left>
                 <control type="label">
-                    <top>20</top>
-                    <width>400</width>
-                    <font>font14</font>
-                    <textcolor>AAFFFFFF</textcolor>
-                    <align>center</align>
+                    <top>0</top>
+					<left>80</left>
+                    <width>320</width>
+                    <font>font12</font>
+                    <textcolor>FFFFD700</textcolor>
+					<scroll>true</scroll>
+					<scrollspeed>40</scrollspeed>
+                    <align>left</align>
                     <aligny>center</aligny>
-                    <label>[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
+                    <label>Title:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
                 </control>
                 <control type="label">
-                    <top>150</top>
+                    <top>90</top>
                     <width>400</width>
                     <font>font12</font>
-                    <textcolor>AAFFFFFF</textcolor>
+                    <textcolor>FFFFFFFF</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <visible>String.IsEmpty(Window().Property(item.info.season))</visible>
-                    <label>Year: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR] | Rating: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]
-                    </label>
+                    <label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR] | Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]
+					</label>
                 </control>
                 <control type="label">
-                    <top>120</top>
+                    <top>60</top>
+					<left>-30</left>
                     <width>400</width>
                     <font>font12</font>
-                    <textcolor>AAFFFFFF</textcolor>
+                    <textcolor>FFFFD700</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
-                    <label>Aired: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.aired)] [/COLOR]</label>
+                    <label>Aired:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.aired)] [/COLOR]</label>
                 </control>
 
                 <control type="textbox">
                     <wrapmultiline>true</wrapmultiline>
-                    <top>360</top>
-                    <left>-70</left>
-                    <height min="20" max="130">auto</height>
-                    <width>550</width>
+                    <top>260</top>
+                    <left>-85</left>
+                    <height min="50" max="155">auto</height>
+                    <width>625</width>
                     <font>font12</font>
-                    <textcolor>AAFFFFFF</textcolor>
+                    <textcolor>FFFFFFFF</textcolor>
                     <align>center</align>
                     <label>$INFO[Window().Property(item.info.plot)]</label>
-             </control>
-            </control>
+                </control>
+        </control>
+
         </control>
 
         <!-- Top Logo/picture  -->
         <control type="image" id="1001">
-            <top>-935</top>
-            <left>550</left>
-            <width>400</width>
+            <top>680</top>
+            <left>1740</left>
+            <width>175</width>
             <aspectratio>keep</aspectratio>
             <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
         </control>
+	</control>
 
         <!-- Seren Ico -->
         <control type="image" id="1001">
-            <top>-250</top>
-            <left>700</left>
-            <width>150</width>
+            <top>-300</top>
+            <left>475</left>
+            <width>350</width>
             <aspectratio>keep</aspectratio>
             <texture>$INFO[Window().Property(seren.logo)]</texture>
+			<colordiffuse>AAFFFFFF</colordiffuse>
         </control>
 
         <control type="label">
-            <left>-200</left>
-            <top>10</top>
+            <left>-325</left>
+            <top>150</top>
             <width>100%</width>
-            <font>font12</font>
+            <font>font16</font>
             <align>center</align>
             <aligny>center</aligny>
-            <textcolor>FFDDDDDD</textcolor>
+            <textcolor>FFDAA520</textcolor>
             <visible>String.IsEqual(Window().Property(process_started),false)</visible>
             <label>$INFO[Window().Property(notification_text)]</label>
         </control>
 
         <control type="group">
             <visible>String.IsEqual(Window().Property(process_started),true)</visible>
-            <left>560</left>
-            <top>530</top>
+            <left>435</left>
+            <top>590</top>
             <width>100%</width>
 
-            <!-- Progress -->
+            <!-- Progress 700 7 space each wide --> 
+		<control type="group">
+			<left>13</left>
+			
+			<control type="image">
+                <left>-160</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),1)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>0</left>
-                <width>30</width>
-                <height>30</height>
+                <left>-160</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),1)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-153</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),2)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-153</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),2)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-146</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),3)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-146</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),3)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-139</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),4)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-139</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),4)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-132</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),5)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-132</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),5)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-125</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),6)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-125</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),6)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-118</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),7)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-118</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),7)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-111</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),8)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-111</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),8)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-104</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),9)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-104</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),9)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-97</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),10)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>0</left>
-                <width>30</width>
-                <height>30</height>
+                <left>-97</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),10)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>-90</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),11)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>40</left>
-                <width>30</width>
-                <height>30</height>
+                <left>-90</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),11)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-83</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),12)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-83</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),12)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-76</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),13)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-76</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),13)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-69</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),14)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-69</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),14)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-62</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),15)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-62</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),15)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-55</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),16)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-55</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),16)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-48</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),17)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-48</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),17)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-41</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),18)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-41</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),18)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-34</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),19)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-34</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),19)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-27</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),20)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>40</left>
-                <width>30</width>
-                <height>30</height>
+                <left>-27</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),20)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>-20</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),21)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>80</left>
-                <width>30</width>
-                <height>30</height>
+                <left>-20</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),21)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-13</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),22)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-13</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),22)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>-6</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),23)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>-6</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),23)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>1</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),24)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>1</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),24)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>8</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),25)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>8</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),25)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>15</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),26)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>15</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),26)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>22</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),27)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>22</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),27)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>29</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),28)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>29</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),28)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>36</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),29)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>36</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),29)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>43</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),30)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>80</left>
-                <width>30</width>
-                <height>30</height>
+                <left>43</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),30)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>50</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),31)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>120</left>
-                <width>30</width>
-                <height>30</height>
+                <left>50</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),31)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>57</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),32)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>57</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),32)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>64</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),33)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>64</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),33)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>71</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),34)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>71</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),34)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>78</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),35)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>78</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),35)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>85</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),36)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>85</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),36)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>92</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),37)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>92</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),37)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>99</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),38)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>99</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),38)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>106</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),39)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>106</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),39)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>113</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),40)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>113</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),40)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>120</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),41)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
                 <left>120</left>
-                <width>30</width>
-                <height>30</height>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
-                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),40)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),41)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>127</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),42)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>160</left>
-                <width>30</width>
-                <height>30</height>
+                <left>127</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),42)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>134</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),43)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>134</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),43)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>141</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),44)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>141</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),44)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>148</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),45)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>148</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),45)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>155</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),46)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>155</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),46)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>162</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),47)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>162</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),47)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>169</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),48)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>169</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),48)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>176</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),49)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>176</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),49)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>183</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),50)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>160</left>
-                <width>30</width>
-                <height>30</height>
+                <left>183</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),50)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>190</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),51)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>200</left>
-                <width>30</width>
-                <height>30</height>
+                <left>190</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),51)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>197</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),52)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>197</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),52)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>204</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),53)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>204</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),53)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>211</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),54)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>211</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),54)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>218</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),55)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>218</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),55)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>225</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),56)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>225</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),56)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>232</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),57)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>232</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),57)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>239</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),58</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>239</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),58)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>246</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),59)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>246</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),59)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>253</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),60)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>200</left>
-                <width>30</width>
-                <height>30</height>
+                <left>253</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),60)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>260</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),61)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>240</left>
-                <width>30</width>
-                <height>30</height>
+                <left>260</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),61)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>267</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),62)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>267</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),62)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>274</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),63)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>274</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),63)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>281</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),64)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>281</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),64)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>288</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),65)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>288</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),65)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>295</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),66)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>295</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),66)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>302</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),67)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>302</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),67)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>309</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),68)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>309</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),68)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>316</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),69)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>316</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),69)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>323</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),70)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>240</left>
-                <width>30</width>
-                <height>30</height>
+                <left>323</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),70)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>330</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),71)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>280</left>
-                <width>30</width>
-                <height>30</height>
+                <left>330</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),71)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>337</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),72)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>337</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),72)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>344</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),73)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>344</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),73)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>351</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),74)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>351</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),74)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>358</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),75)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>358</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),75)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>365</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),76)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>365</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),76)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>372</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),77)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>372</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),77)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>379</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),78)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>379</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),78)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>386</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),79)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>386</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),79)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>393</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),80)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>280</left>
-                <width>30</width>
-                <height>30</height>
+                <left>393</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),80)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>400</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),81)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>320</left>
-                <width>30</width>
-                <height>30</height>
+                <left>400</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),81)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>407</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),82)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>407</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),82)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>414</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),83)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>414</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),83)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>421</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),84)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>421</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),84)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>428</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),85)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>428</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),85)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>435</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),86)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>435</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),86)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>442</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),87)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>442</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),87)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>449</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),88)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>449</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),88)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>456</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),89)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>456</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),89)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>463</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),90)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>320</left>
-                <width>30</width>
-                <height>30</height>
+                <left>463</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),90)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
-
+			
+			<control type="image">
+                <left>470</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),91)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
             <control type="image">
-                <left>360</left>
-                <width>30</width>
-                <height>30</height>
+                <left>470</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),91)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>477</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),92)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>477</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),92)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>484</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),93)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>484</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),93)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>491</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),94)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>491</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),94)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>498</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),95)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>498</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),95)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>505</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),96)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>505</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),96)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>512</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),97)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>512</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),97)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>519</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),98)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>519</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),98)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>526</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsLess(Window().Property(progress),99)</visible>
+                <colordiffuse>70DAA520</colordiffuse>
+            </control>
+            <control type="image">
+                <left>526</left>
+                <width>5</width>
+                <height>20</height>
+                <texture>$INFO[Window().Property(texture.white)]</texture>
+                <visible>Integer.IsGreaterOrEqual(Window().Property(progress),99)</visible>
+                <colordiffuse>DDDAA520</colordiffuse>
+            </control>
+			
+			<control type="image">
+                <left>533</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsLess(Window().Property(progress),100)</visible>
-                <colordiffuse>33FFFFFF</colordiffuse>
+                <colordiffuse>70DAA520</colordiffuse>
             </control>
             <control type="image">
-                <left>360</left>
-                <width>30</width>
-                <height>30</height>
+                <left>533</left>
+                <width>5</width>
+                <height>20</height>
                 <texture>$INFO[Window().Property(texture.white)]</texture>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(progress),100)</visible>
-                <colordiffuse>FFFFFFFF</colordiffuse>
+                <colordiffuse>DDDAA520</colordiffuse>
             </control>
+		 </control>
+
+
+                        
 
             <!-- Information -->
             <control type="label">
-                <top>-400</top>
+                <top>-380</top>
                 <left>-760</left>
                 <width>1920</width>
-                <font>font12</font>
+                <font>font16</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
+                <textcolor>EEDAA520</textcolor>
                 <label>Torrents: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(total_torrents)][/COLOR] | Cached: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(cached_torrents)][/COLOR] | Hosters: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(hosters_sources)][/COLOR] | CloudFiles: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(cloud_sources)][/COLOR]</label>
             </control>
 
             <control type="label">
-                <top>-320</top>
+                <top>-290</top>
                 <left>-760</left>
                 <width>1920</width>
-                <font>font12</font>
+                <font>font16</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
+                <textcolor>EEDAA520</textcolor>
                 <label>4k: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(4k_sources)][/COLOR] | 1080p: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(1080p_sources)][/COLOR] | 720p: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(720p_sources)][/COLOR] | SD: [COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(sd_sources)][/COLOR]</label>
             </control>
 
             <control type="label">
-                <top>-240</top>
+                <top>-200</top>
                 <left>-760</left>
                 <width>1920</width>
-                <font>font12</font>
+                <font>font16</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
-                <label>Remaining Providers: $INFO[Window().Property(remaining_providers_count)]</label>
+                <textcolor>EEDAA520</textcolor>
+                <label>[COLOR$INFO[Window().Property(settings.color)]]Remaining Providers: $INFO[Window().Property(remaining_providers_count)][/COLOR]</label>
                 <visible>Integer.IsGreaterOrEqual(Window().Property(remaining_providers_count),10)</visible>
             </control>
 
             <control type="label">
-                <top>-240</top>
+                <top>-200</top>
                 <left>-760</left>
                 <width>1920</width>
-                <font>font12</font>
+                <font>font16</font>
                 <align>center</align>
                 <aligny>center</aligny>
                 <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
+                <textcolor>EEDAA520</textcolor>
                 <label>$INFO[Window().Property(remaining_providers_list)]</label>
                 <visible>!Integer.IsGreaterOrEqual(Window().Property(remaining_providers_count),10)</visible>
             </control>
+			
+			<!--control type="label">
+				<top>-1600</top>
+				<left>-400</left>
+				<width>500</width>
+				<font>font16</font>
+				<align>left</align>
+				<width>auto</width>
+				<textcolor>DDDAA520</textcolor>
+				<!--label>Time: $INFO[System.Time(hh:mm:ss xx)]</label-->
+				<!--label>Elapsed: $INFO[Player.StartTime(mm:ss)]</label->
+				<visible>Integer.IsGreaterOrEqual(Window().Property(progress),1-100)</visible>
+			</control-->
         </control>
 
 
