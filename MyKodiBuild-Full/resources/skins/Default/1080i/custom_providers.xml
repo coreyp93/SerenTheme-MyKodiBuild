@@ -33,9 +33,10 @@
             <align>center</align>
         </control>
 
+		<!-- Toolbox Background -->
         <control type="image">
             <visible>true</visible>
-            <left>50</left>
+            <left>20</left>
             <width>350</width>
             <height>840</height>
             <top>200</top>
@@ -44,106 +45,88 @@
             <colordiffuse>00000000</colordiffuse>
         </control>
 
-        <!-- Quick Access Panel -->
-       <control type="group" id="4000">
-           <left>20</left>
-            <control type="label">
+        <!-- Toolbox Label -->
+		<control type="label">
                 <top>100</top>
-				<left>120</left>
+				<left>165</left>
                 <height>100</height>
                 <width>350</width>
-                <label>[COLOR gold][B]$ADDON[plugin.video.seren 40206][/B][/COLOR]</label>
+                <label>[COLOR gold][B]Tools[/B][/COLOR]</label>
             </control>
-            <control type="grouplist">
-                <onup>4000</onup>
-                <ondown>4000</ondown>
-                <onright>2000</onright>
-                <top>220</top>
-                <height>840</height>
-                <defaultcontrol>3009</defaultcontrol>
-                <control type="button" id="3009">
-                    <top>0</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40207][/COLOR]</label>
-                </control>
-                <control type="button" id="3010">
-                    <top>0</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40208][/COLOR]</label>
-                </control>
-                <control type="button" id="3007">
-                    <top>0</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40209][/COLOR]</label>
-                </control>
-                <control type="button" id="3008">
-                    <top>0</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40210][/COLOR]</label>
-                </control>
-                <control type="button" id="3001">
-                    <top>0</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40211][/COLOR]</label>
-                </control>
-                <control type="button" id="3002">
-                    <top>70</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40212][/COLOR]</label>
-                </control>
-                <control type="button" id="3003">
-                    <top>200</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40213][/COLOR]</label>
-                </control>
-                <control type="button" id="3004">
-                    <top>300</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40214][/COLOR]</label>
-                </control>
-                <control type="button" id="3005">
-                    <top>400</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40215][/COLOR]</label>
-                </control>
-                <control type="button" id="3006">
-                    <top>500</top>
-                    <width>350</width>
-                    <height>70</height>
-					<align>center</align>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>[COLOR gold]$ADDON[plugin.video.seren 40216][/COLOR]</label>
-                </control>
-            </control>
-
-       </control>
+			
+		<!-- Toolbox -->
+		<control type="group" id="4000">
+			<left>25</left>
+			<top>195</top>
+			<width>350</width>
+            
+				<control type="grouplist">
+					<onright>SetFocus(2000)</onright>
+					<onleft>SetFocus(2001)</onleft>
+					
+						<control type="button" id="3009">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Install Package[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3010">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Uninstall Package[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3007">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Enable Package[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3008">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Disable Package[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3001">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Enable All Hosters[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3002">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Enable All Torrents[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3003">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Disable All Hosters[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3004">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Disable All Torrents[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3005">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Enable All[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+						<control type="button" id="3006">
+							<height>70</height>
+							<include>Dialog_Standard_Button</include>
+							<label>[COLOR gold]Disable All[/COLOR]</label>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+						</control>
+				</control>
+		</control>
+		
 
         <!-- Package List -->
         <control type="group">
@@ -227,7 +210,7 @@
                     <control type="image">
                         <width>660</width>
                         <height>1</height>
-                        <top>79</top>
+                        <top>69</top>
                         <texture>$INFO[Window().Property(texture.white)]</texture>
                         <colordiffuse>10FFD700</colordiffuse>
                     </control>
@@ -263,6 +246,7 @@
                 <width>780</width>
                 <height>840</height>
                 <onleft>2000</onleft>
+				<onright>4000</onright>
                 <itemlayout height="84">
                     <control type="label">
                         <width>100%</width>
@@ -278,22 +262,43 @@
                             <left>260</left>
                             <height>100%</height>
                             <aligny>center</aligny>
-                            <label>$ADDON[plugin.video.seren 40219]: [COLOR $INFO[Window.Property(settings.color)]][CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE][/COLOR]</label>
+                            <label>[CAPITALIZE][COLOR gold] $ADDON[plugin.video.seren 40219]:[/COLOR][/CAPITALIZE]</label>
                         </control>
-                        <control type="label">
-                            <left>75%</left>
+						<control type="label">
+                            <left>435</left>
                             <height>100%</height>
                             <aligny>center</aligny>
-                            <label>$ADDON[plugin.video.seren 40220]: [COLOR $INFO[Window.Property(settings.color)]][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <label>[CAPITALIZE][COLOR $INFO[Window.Property(settings.color]] $INFO[ListItem.Property(provider_type)][/COLOR][/CAPITALIZE]</label>
+                        </control>
+                        <control type="label">
+                            <left>74%</left>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <label>[CAPITALIZE][COLOR gold] $ADDON[plugin.video.seren 40220]:[/COLOR][/CAPITALIZE]</label>
                             <visible>String.IsEqual(ListItem.Property(status),enabled)</visible>
                         </control>
-                        <control type="label">
-                            <left>75%</left>
+						 <control type="label">
+                            <left>85%</left>
                             <height>100%</height>
                             <aligny>center</aligny>
-                            <label>$ADDON[plugin.video.seren 40220]: [COLOR indianred][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <label>[CAPITALIZE][COLOR $INFO[Window.Property(settings.color]] $INFO[ListItem.Property(status)][/COLOR][/CAPITALIZE]</label>
+                            <visible>String.IsEqual(ListItem.Property(status),enabled)</visible>
+                        </control>
+						<control type="label">
+                            <left>74%</left>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <label>[CAPITALIZE][COLOR gold] $ADDON[plugin.video.seren 40220]:[/COLOR][/CAPITALIZE]</label>
                             <visible>String.IsEqual(ListItem.Property(status),disabled)</visible>
                         </control>
+						 <control type="label">
+                            <left>85%</left>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <label>[CAPITALIZE][COLOR crimson] $INFO[ListItem.Property(status)][/COLOR][/CAPITALIZE]</label>
+                            <visible>String.IsEqual(ListItem.Property(status),disabled)</visible>
+                        </control>
+					</control>
                         <control type="image">
                             <width>100%</width>
                             <height>1</height>
@@ -301,7 +306,6 @@
                             <texture>$INFO[Window().Property(texture.white)]</texture>
                             <colordiffuse>10FFD700</colordiffuse>
                         </control>
-                    </control>
                 </itemlayout>
                 <focusedlayout height="84">
                     <control type="image">
@@ -321,31 +325,51 @@
                     <control type="group">
                         <top>-10</top>
                         <control type="label">
-						<height>100%</height>
-                            <width>50%</width>
                             <left>260</left>
-                            <label>$ADDON[plugin.video.seren 40219]: [COLOR $INFO[Window.Property(settings.color)]][CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE][/COLOR]</label>
-                        </control>
-                        <control type="label">
-                            <left>75%</left>
                             <height>100%</height>
                             <aligny>center</aligny>
-                            <label>$ADDON[plugin.video.seren 40220]: [COLOR $INFO[Window.Property(settings.color)]][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <label>[CAPITALIZE][COLOR gold] $ADDON[plugin.video.seren 40219]:[/COLOR][/CAPITALIZE]</label>
+                        </control>
+						<control type="label">
+                            <left>435</left>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <label>[CAPITALIZE][COLOR $INFO[Window.Property(settings.color]] $INFO[ListItem.Property(provider_type)][/COLOR][/CAPITALIZE]</label>
+                        </control>
+                        <control type="label">
+                            <left>74%</left>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <label>[CAPITALIZE][COLOR gold] $ADDON[plugin.video.seren 40220]:[/COLOR][/CAPITALIZE]</label>
                             <visible>String.IsEqual(ListItem.Property(status),enabled)</visible>
                         </control>
-                        <control type="label">
-                            <left>75%</left>
+						 <control type="label">
+                            <left>85%</left>
                             <height>100%</height>
                             <aligny>center</aligny>
-                            <label>$ADDON[plugin.video.seren 40220]: [COLOR indianred][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <label>[CAPITALIZE][COLOR $INFO[Window.Property(settings.color]] $INFO[ListItem.Property(status)][/COLOR][/CAPITALIZE]</label>
+                            <visible>String.IsEqual(ListItem.Property(status),enabled)</visible>
+                        </control>
+						<control type="label">
+                            <left>74%</left>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <label>[CAPITALIZE][COLOR gold] $ADDON[plugin.video.seren 40220]:[/COLOR][/CAPITALIZE]</label>
+                            <visible>String.IsEqual(ListItem.Property(status),disabled)</visible>
+                        </control>
+						 <control type="label">
+                            <left>85%</left>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <label>[CAPITALIZE][COLOR crimson] $INFO[ListItem.Property(status)][/COLOR][/CAPITALIZE]</label>
                             <visible>String.IsEqual(ListItem.Property(status),disabled)</visible>
                         </control>
                         <control type="image">
                             <width>100%</width>
                             <height>1</height>
-                            <top>-15</top>
+                            <top>-5</top>
                             <texture>$INFO[Window().Property(texture.white)]</texture>
-                            <colordiffuse>00000000</colordiffuse>
+                            <colordiffuse>10FFD700</colordiffuse>
                         </control>
                     </control>
                 </focusedlayout>

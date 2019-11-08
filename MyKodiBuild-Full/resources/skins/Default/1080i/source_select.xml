@@ -21,7 +21,7 @@
         
         <!-- MultiFanart -->
             <control type="group">
-                <visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + <!--System.HasAddon(script.artwork.helper)--></visible>
+                <visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)</visible>
             
                 <control type="fadelabel" id="1010">
                     <info>Window().Property(item.art.fanart)</info>
@@ -56,9 +56,9 @@
                 <!-- Background -->
                 <control type="multiimage">
                     <imagepath background="true">$INFO[Control.GetLabel(1010)]</imagepath>
-                    <timeperimage>500</timeperimage>
-                    <fadetime>600</fadetime>
-                    <pauseatend>10000</pauseatend>
+                    <timeperimage>4000</timeperimage>
+                    <fadetime>1000</fadetime>
+                    <pauseatend>12000</pauseatend>
                     <randomize>true</randomize>
                     <loop>no</loop>
                 </control>
@@ -95,7 +95,7 @@
             <left>1280</left>
             <control type="label">
                 <top>700</top>
-				<left>95</left>
+				<left>85</left>
                 <width>300</width>
                 <font>font10</font>
                 <textcolor>FFFFD700</textcolor>
@@ -106,7 +106,7 @@
             </control>
 			<control type="label">
                 <top>700</top>
-				<left>210</left>
+				<left>180</left>
                 <width>300</width>
                 <font>font10</font>
                 <textcolor>FFFFD700</textcolor>
@@ -127,21 +127,21 @@
             <control type="group">
                 <top>640</top>
 				<left>80</left>
-				<!--control type="label">
+				<control type="label">
                     <top>0</top>
-					<left>-90</left>
-                    <width>320</width>
-                    <font>font12</font>
+					<left>-80</left>
+                    <width>50</width>
+                    <font>font10</font>
                     <textcolor>FFFFD700</textcolor>
 					<scroll>true</scroll>
 					<scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
                     <label>Title:</label>
-                </control-->
+                </control>
                 <control type="label">
                     <top>0</top>
-					<left>-90</left>
+					<left>-40</left>
                     <width min="10" max="455">auto</width>
                     <font>font10</font>
                     <textcolor>FFFFD700</textcolor>
@@ -149,23 +149,35 @@
 					<scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>Title: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
+                    <label> [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
                 </control>
                 <control type="label">
                     <top>90</top>
-					<left>-90</left>
+					<left>-80</left>
                     <width>450</width>
                     <font>font10</font>
                     <textcolor>FFFFD700</textcolor>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <visible>String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
                     <label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR]  Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]  Certificate:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.mpaa)][/COLOR]
+					</label>
+                </control>
+				<control type="label">
+                    <top>90</top>
+					<left>-80</left>
+                    <width>450</width>
+                    <font>font10</font>
+                    <textcolor>FFFFD700</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <visible>String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
+                    <label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR]  Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]  Certificate: N/A[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.mpaa)][/COLOR]
 					</label>
                 </control>
                 <control type="label">
                     <top>60</top>
-					<left>-90</left>
+					<left>-80</left>
                     <width>400</width>
                     <font>font10</font>
                     <textcolor>FFFFD700</textcolor>
@@ -233,11 +245,11 @@
                     <colordiffuse>90000005</colordiffuse>
                 </control>
                 <control type="label">
-                    <top>20</top>
+                    <top>25</top>
                     <left>10</left>
                     <width>1090</width>
                     <height>0</height>
-                    <font>font13</font>
+                    <font>font12</font>
                     <textcolor>FFFFFFFF</textcolor>
 		    <shadowcolor></shadowcolor>
                     <align>left</align>
@@ -246,7 +258,7 @@
                 </control>
                 <control type="label">
                     <top>70</top>
-                    <left>270</left>
+                    <left>10</left>
                     <width>650</width>
                     <height>0</height>
                     <font>font10</font>
@@ -258,7 +270,7 @@
                 </control>
                 <control type="label">
                     <top>100</top>
-                    <left>270</left>
+                    <left>10</left>
                     <width>650</width>
                     <height>0</height>
                     <aligny>center</aligny>
@@ -269,7 +281,7 @@
                 </control>
                 <control type="label">
                     <top>70</top>
-                    <left>10</left>
+                    <left>380</left>
                     <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
@@ -281,7 +293,7 @@
                 </control>
                 <control type="label">
                     <top>100</top>
-                    <left>10</left>
+                    <left>380</left>
                     <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
@@ -305,34 +317,34 @@
                 </control>
               <control type="image">
                     <centertop>50%</centertop>
-                    <left>1120</left>
-                    <width>90</width>
-                    <height>90</height>
-                    <texture background="true">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualitysd480.png</texture>
+                    <left>1110</left>
+                    <width>110</width>
+                    <height>110</height>
+                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualitysd480.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),SD)</visible>
                 </control>
                 <control type="image">
                     <centertop>50%</centertop>
-                    <left>1120</left>
-                    <width>90</width>
-                    <height>90</height>
-                    <texture background="true">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd720.png</texture>
+                    <left>1110</left>
+                    <width>110</width>
+                    <height>110</height>
+                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd720.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),720P)</visible>
                 </control>
                 <control type="image">
                     <centertop>50%</centertop>
-                    <left>1120</left>
-                    <width>90</width>
-                    <height>90</height>
-                    <texture background="true" colordiffuse="green">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
+                    <left>1110</left>
+                    <width>110</width>
+                    <height>110</height>
+                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
                 </control>
                 <control type="image">
                     <centertop>50%</centertop>
-                    <left>1120</left>
-                    <width>90</width>
-                    <height>90</height>
-                    <texture background="true" colordiffuse="green">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
+                    <left>1110</left>
+                    <width>110</width>
+                    <height>110</height>
+                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),4k)</visible>
                 </control>
 
@@ -353,11 +365,11 @@
                     <colordiffuse>EE000000</colordiffuse>
                 </control>
                 <control type="label">
-                    <top>20</top>
+                    <top>25</top>
                     <left>10</left>
                     <width>1090</width>
                     <height>0</height>
-                    <font>font13</font>
+                    <font>font12</font>
                     <textcolor>FFFFFFFF</textcolor>
 		    <shadowcolor></shadowcolor>
                     <align>left</align>
@@ -394,7 +406,7 @@
                 </control>
                 <control type="label">
                     <top>70</top>
-                    <left>350</left>
+                    <left>380</left>
                     <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
@@ -406,7 +418,7 @@
                 </control>
                 <control type="label">
                     <top>100</top>
-                    <left>350</left>
+                    <left>380</left>
                     <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
@@ -430,34 +442,34 @@
                 </control>
               <control type="image">
                     <centertop>50%</centertop>
-                    <left>1120</left>
-                    <width>90</width>
-                    <height>90</height>
-                    <texture background="true">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualitysd480.png</texture>
+                    <left>1110</left>
+                    <width>110</width>
+                    <height>110</height>
+                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualitysd480.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),SD)</visible>
                 </control>
                 <control type="image">
                     <centertop>50%</centertop>
-                    <left>1120</left>
-                    <width>90</width>
-                    <height>90</height>
-                    <texture background="true">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd720.png</texture>
+                    <left>1110</left>
+                    <width>110</width>
+                    <height>110</height>
+                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd720.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),720P)</visible>
                 </control>
                 <control type="image">
                     <centertop>50%</centertop>
-                    <left>1120</left>
-                    <width>90</width>
-                    <height>90</height>
-                    <texture background="true" colordiffuse="yellow">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
+                    <left>1110</left>
+                    <width>110</width>
+                    <height>110</height>
+                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
                 </control>
                 <control type="image">
                     <centertop>50%</centertop>
-                    <left>1120</left>
-                    <width>90</width>
-                    <height>90</height>
-                    <texture background="true" colordiffuse="yellow">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
+                    <left>1110</left>
+                    <width>110</width>
+                    <height>110</height>
+                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),4k)</visible>
                 </control>
 
