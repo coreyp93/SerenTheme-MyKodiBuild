@@ -1,5 +1,4 @@
 <window type="dialog">
-<!--    <onload>Skin.SetString(SerenPath,special://home/userdata/addon_data/plugin.video.seren/skins/SerenMod-Full/resources/skins/)</onload> -->
     <defaultcontrol>2</defaultcontrol>
     <coordinates>
         <left>0</left>
@@ -22,7 +21,7 @@
         
         <!-- MultiFanart -->
             <control type="group">
-                <visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)</visible>
+                <visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + <!--System.HasAddon(script.artwork.helper)--></visible>
             
                 <control type="fadelabel" id="1010">
                     <info>Window().Property(item.art.fanart)</info>
@@ -57,9 +56,9 @@
                 <!-- Background -->
                 <control type="multiimage">
                     <imagepath background="true">$INFO[Control.GetLabel(1010)]</imagepath>
-                    <timeperimage>4000</timeperimage>
-                    <fadetime>1000</fadetime>
-                    <pauseatend>12000</pauseatend>
+                    <timeperimage>500</timeperimage>
+                    <fadetime>600</fadetime>
+                    <pauseatend>10000</pauseatend>
                     <randomize>true</randomize>
                     <loop>no</loop>
                 </control>
@@ -95,10 +94,10 @@
             <top>15</top>
             <left>1280</left>
             <control type="label">
-                <top>640</top>
-				<left>-95</left>
+                <top>700</top>
+				<left>95</left>
                 <width>300</width>
-                <font>font12</font>
+                <font>font10</font>
                 <textcolor>FFFFD700</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -107,9 +106,9 @@
             </control>
 			<control type="label">
                 <top>700</top>
-				<left>-100</left>
+				<left>210</left>
                 <width>300</width>
-                <font>font12</font>
+                <font>font10</font>
                 <textcolor>FFFFD700</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -123,13 +122,14 @@
                 <top>0</top>
                 <texture background="true">$INFO[Window().Property(item.art.poster)]</texture>
             </control>
-
+			
+			
             <control type="group">
                 <top>640</top>
 				<left>80</left>
-                <control type="label">
+				<!--control type="label">
                     <top>0</top>
-					<left>80</left>
+					<left>-90</left>
                     <width>320</width>
                     <font>font12</font>
                     <textcolor>FFFFD700</textcolor>
@@ -137,38 +137,51 @@
 					<scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>Title:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
+                    <label>Title:</label>
+                </control-->
+                <control type="label">
+                    <top>0</top>
+					<left>-90</left>
+                    <width min="10" max="455">auto</width>
+                    <font>font10</font>
+                    <textcolor>FFFFD700</textcolor>
+					<scroll>true</scroll>
+					<scrollspeed>40</scrollspeed>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>Title: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
                 </control>
                 <control type="label">
                     <top>90</top>
-                    <width>400</width>
-                    <font>font12</font>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <align>center</align>
+					<left>-90</left>
+                    <width>450</width>
+                    <font>font10</font>
+                    <textcolor>FFFFD700</textcolor>
+                    <align>left</align>
                     <aligny>center</aligny>
                     <visible>String.IsEmpty(Window().Property(item.info.season))</visible>
-                    <label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR] | Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]
+                    <label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR]  Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]  Certificate:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.mpaa)][/COLOR]
 					</label>
                 </control>
                 <control type="label">
                     <top>60</top>
-					<left>-30</left>
+					<left>-90</left>
                     <width>400</width>
-                    <font>font12</font>
+                    <font>font10</font>
                     <textcolor>FFFFD700</textcolor>
-                    <align>center</align>
+                    <align>left</align>
                     <aligny>center</aligny>
                     <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
-                    <label>Aired:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.aired)] [/COLOR]</label>
+                    <label>Aired: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.aired)] [/COLOR]</label>
                 </control>
 
                 <control type="textbox">
                     <wrapmultiline>true</wrapmultiline>
                     <top>260</top>
-                    <left>-85</left>
+                    <left>-100</left>
                     <height min="50" max="155">auto</height>
-                    <width>625</width>
-                    <font>font12</font>
+                    <width>645</width>
+                    <font>font10</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <align>center</align>
                     <label>$INFO[Window().Property(item.info.plot)]</label>
@@ -311,7 +324,7 @@
                     <left>1120</left>
                     <width>90</width>
                     <height>90</height>
-                    <texture background="true">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
+                    <texture background="true" colordiffuse="green">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
                 </control>
                 <control type="image">
@@ -319,7 +332,7 @@
                     <left>1120</left>
                     <width>90</width>
                     <height>90</height>
-                    <texture background="true">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
+                    <texture background="true" colordiffuse="green">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),4k)</visible>
                 </control>
 
@@ -358,7 +371,7 @@
 				</control>
                 <control type="label">
                     <top>70</top>
-                    <left>270</left>
+                    <left>10</left>
                     <width>650</width>
                     <height>0</height>
                     <font>font10</font>
@@ -370,7 +383,7 @@
                 </control>
                 <control type="label">
                     <top>100</top>
-                    <left>270</left>
+                    <left>10</left>
                     <width>650</width>
                     <height>0</height>
                     <aligny>center</aligny>
@@ -381,7 +394,7 @@
                 </control>
                 <control type="label">
                     <top>70</top>
-                    <left>10</left>
+                    <left>350</left>
                     <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
@@ -393,7 +406,7 @@
                 </control>
                 <control type="label">
                     <top>100</top>
-                    <left>10</left>
+                    <left>350</left>
                     <width>550</width>
                     <height>0</height>
                     <aligny>center</aligny>
@@ -436,7 +449,7 @@
                     <left>1120</left>
                     <width>90</width>
                     <height>90</height>
-                    <texture background="true">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
+                    <texture background="true" colordiffuse="yellow">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
                 </control>
                 <control type="image">
@@ -444,7 +457,7 @@
                     <left>1120</left>
                     <width>90</width>
                     <height>90</height>
-                    <texture background="true">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
+                    <texture background="true" colordiffuse="yellow">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
                     <visible>String.Contains(ListItem.Property(quality),4k)</visible>
                 </control>
 

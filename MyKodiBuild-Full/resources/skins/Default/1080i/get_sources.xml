@@ -124,7 +124,7 @@
             <control type="group">
                 <top>640</top>
 				<left>80</left>
-                <control type="label">
+				<control type="label">
                     <top>0</top>
 					<left>80</left>
                     <width>320</width>
@@ -134,13 +134,25 @@
 					<scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>Title:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
+                    <label>Title:</label>
+                </control>
+                <control type="label">
+                    <top>0</top>
+					<left>135</left>
+                    <width>280</width>
+                    <font>font12</font>
+                    <textcolor>FFFFD700</textcolor>
+					<scroll>true</scroll>
+					<scrollspeed>40</scrollspeed>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
                 </control>
                 <control type="label">
                     <top>90</top>
                     <width>400</width>
                     <font>font12</font>
-                    <textcolor>FFFFFFFF</textcolor>
+                    <textcolor>FFFFD700</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <visible>String.IsEmpty(Window().Property(item.info.season))</visible>

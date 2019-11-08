@@ -133,7 +133,19 @@
 					<scrollspeed>40</scrollspeed>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>Title:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
+                    <label>Title:</label>
+                </control>
+                <control type="label">
+                    <top>0</top>
+					<left>135</left>
+                    <width>280</width>
+                    <font>font12</font>
+                    <textcolor>FFFFD700</textcolor>
+					<scroll>true</scroll>
+					<scrollspeed>40</scrollspeed>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
                 </control>
                 <control type="label">
                     <top>90</top>
