@@ -127,7 +127,7 @@
                 <aligny>center</aligny>
                 <width>auto</width>
                 <textcolor>EEDAA520</textcolor>
-                <label>Provider:[CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(debrid_provider)][/COLOR][/CAPITALIZE] | Source:[CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_provider)][/COLOR][/CAPITALIZE]</label>
+                <label>Provider: [CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(debrid_provider)][/COLOR][/CAPITALIZE] | Source: [CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_provider)][/COLOR][/CAPITALIZE]</label>
             </control>
 
             <control type="label">
@@ -139,7 +139,7 @@
                 <aligny>center</aligny>
                 <width>auto</width>
                 <textcolor>EEDAA520</textcolor>
-                <label>Resolution:[CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_resolution)][/COLOR][CAPITALIZE] | Info:[CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_info)][/COLOR][/CAPITALIZE]</label>
+                <label>Resolution: [CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_resolution)][/COLOR][CAPITALIZE] | Info: [CAPITALIZE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_info)][/COLOR][/CAPITALIZE]</label>
             </control>
 
         </control>
