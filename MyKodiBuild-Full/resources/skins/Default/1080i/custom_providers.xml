@@ -52,7 +52,7 @@
                 <height>100</height>
                 <width>350</width>
                 <label>[COLOR gold][B]Tools[/B][/COLOR]</label>
-            </control>
+		</control>
 			
 		<!-- Toolbox -->
 		<control type="group" id="4000">
