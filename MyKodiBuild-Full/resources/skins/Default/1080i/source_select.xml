@@ -4,484 +4,657 @@
         <left>0</left>
         <top>0</top>
     </coordinates>
+	
     <controls>
-        <!-- Background Texture -->
-        <control type="image">
-            <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>00000000</colordiffuse>
-        </control>
-        <!-- Background -->
-        <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>1920</width>
-            <height>1080</height>
-            <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
-        </control>
-        
-        <!-- MultiFanart -->
-            <control type="group">
-                <visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)</visible>
-            
-                <control type="fadelabel" id="1010">
-                    <info>Window().Property(item.art.fanart)</info>
-                    <info>Window().Property(item.art.fanart1)</info>
-                    <info>Window().Property(item.art.fanart2)</info>
-                    <info>Window().Property(item.art.fanart3)</info>
-                    <info>Window().Property(item.art.fanart4)</info>
-                    <info>Window().Property(item.art.fanart5)</info>
-                    <info>Window().Property(item.art.fanart6)</info>
-                    <info>Window().Property(item.art.fanart7)</info>
-                    <info>Window().Property(item.art.fanart8)</info>
-                    <info>Window().Property(item.art.fanart9)</info>
-                    <info>Window().Property(item.art.fanart10)</info>
-                    <info>Window().Property(item.art.fanart11)</info>
-                    <info>Window().Property(item.art.fanart12)</info>
-                    <info>Window().Property(item.art.fanart13)</info>
-                    <info>Window().Property(item.art.fanart14)</info>
-                    <info>Window().Property(item.art.fanart15)</info>
-                    <info>Window().Property(item.art.fanart16)</info>
-                    <info>Window().Property(item.art.fanart17)</info>
-                    <info>Window().Property(item.art.fanart18)</info>
-                    <info>Window().Property(item.art.fanart19)</info>
-                    <info>Window().Property(item.art.fanart20)</info>
-                    <randomize>true</randomize>
-                    <pauseatend>8000</pauseatend>
-                    <scroll>false</scroll>
-                    <scrollout>false</scrollout>
-                    <resetonlabelchange>true</resetonlabelchange>
-                    <textcolor>0x00000000</textcolor>
-                </control>
-                
-                <!-- Background -->
-                <control type="multiimage">
-                    <imagepath background="true">$INFO[Control.GetLabel(1010)]</imagepath>
-                    <timeperimage>4000</timeperimage>
-                    <fadetime>1000</fadetime>
-                    <pauseatend>12000</pauseatend>
-                    <randomize>true</randomize>
-                    <loop>no</loop>
-                </control>
-            </control>
-
-        <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>1920</width>
-            <height>1080</height>
-            <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>50000000</colordiffuse>
-        </control>
-
-
-        <!--&lt;!&ndash; Additional Background Difuse &ndash;&gt;-->
-        <!--<control type="image">-->
-            <!--<texture background="true">$INFO[Window().Property(texture.white)]</texture>-->
-            <!--<colordiffuse>8936353b</colordiffuse>-->
-        <!--</control>-->
-
-        <!-- Side Info -->
-	<control type="group">
-		<!--control type="image">
-				<top>12</top>
-				<bottom>12</bottom>
-				<left>1270</left>
-				<width>640</width>
-				<height>1056</height>
-				<texture colordiffuse="gold" border="5">common/outline.png</texture>
-		</control-->
-        <control type="group">
-            <top>15</top>
-            <left>1280</left>
-            <control type="label">
-                <top>700</top>
-				<left>85</left>
-                <width>300</width>
-                <font>font10</font>
-                <textcolor>FFFFD700</textcolor>
-                <align>center</align>
-                <aligny>center</aligny>
-                <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
-                <label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] </label>
-            </control>
-			<control type="label">
-                <top>700</top>
-				<left>180</left>
-                <width>300</width>
-                <font>font10</font>
-                <textcolor>FFFFD700</textcolor>
-                <align>center</align>
-                <aligny>center</aligny>
-                <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
-                <label>Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
-            </control>
-            <control type="image">
-				<left>20</left>
-                <width>550</width>
-                <height>825</height>
-                <top>0</top>
-                <texture background="true">$INFO[Window().Property(item.art.poster)]</texture>
-            </control>
+		
+			<!-- Background Texture -->
+			<control type="image">
+				<texture background="true">$INFO[Window().Property(texture.white)]</texture>
+				<colordiffuse>00000000</colordiffuse>
+			</control>
+			<!-- Background -->
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>1920</width>
+				<height>1080</height>
+				<texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
+			</control>
+			<control type="multiimage">
+				<imagepath background="true">$INFO[Control.GetLabel(1010)]</imagepath>
+				<fadetime>2000</fadetime>
+				<loop>yes</loop>
+			</control>
 			
+				<!-- Fanart Settings -->
+				<control type="group">
+					<!--visible>System.HasAddon(script.artwork.helper)</visible-->
+						
+
+					<!-- MultiFanart Settings-->
+					<control type="fadelabel" id="1010">
+						<info>Window().Property(item.art.fanart)</info>
+						<info>Window().Property(item.art.fanart1)</info>
+						<info>Window().Property(item.art.fanart2)</info>
+						<info>Window().Property(item.art.fanart3)</info>
+						<info>Window().Property(item.art.fanart4)</info>
+						<info>Window().Property(item.art.fanart5)</info>
+						<info>Window().Property(item.art.fanart6)</info>
+						<info>Window().Property(item.art.fanart7)</info>
+						<info>Window().Property(item.art.fanart8)</info>
+						<info>Window().Property(item.art.fanart9)</info>
+						<info>Window().Property(item.art.fanart10)</info>
+						<info>Window().Property(item.art.fanart11)</info>
+						<info>Window().Property(item.art.fanart12)</info>
+						<info>Window().Property(item.art.fanart13)</info>
+						<info>Window().Property(item.art.fanart14)</info>
+						<info>Window().Property(item.art.fanart15)</info>
+						<info>Window().Property(item.art.fanart16)</info>
+						<info>Window().Property(item.art.fanart17)</info>
+						<info>Window().Property(item.art.fanart18)</info>
+						<info>Window().Property(item.art.fanart19)</info>
+						<info>Window().Property(item.art.fanart20)</info>
+						<randomize>true</randomize>
+						<pauseatend>10000</pauseatend>
+						<scroll>false</scroll>
+						<scrollout>false</scrollout>
+						<resetonlabelchange>true</resetonlabelchange>
+						<textcolor>0x00000000</textcolor>
+						<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)</visible>
+
+					</control>
+					
+					<!-- MultiPosterart Settings-->
+					<control type="fadelabel" id="1011">
+						<info>Window().Property(item.art.poster)</info>
+						<info>Window().Property(item.art.poster1)</info>
+						<info>Window().Property(item.art.poster2)</info>
+						<info>Window().Property(item.art.poster3)</info>
+						<info>Window().Property(item.art.poster4)</info>
+						<info>Window().Property(item.art.poster5)</info>
+						<info>Window().Property(item.art.poster6)</info>
+						<info>Window().Property(item.art.poster7)</info>
+						<info>Window().Property(item.art.poster8)</info>
+						<info>Window().Property(item.art.poster9)</info>
+						<info>Window().Property(item.art.poster10)</info>
+						<randomize>true</randomize>
+						<pauseatend>10000</pauseatend>
+						<scroll>false</scroll>
+						<scrollout>false</scrollout>
+						<resetonlabelchange>true</resetonlabelchange>
+						<textcolor>0x00000000</textcolor>
+						<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)</visible>
+					</control>
+				
+				</control>
+
+			<!-- Background Overlay/Shadowing -->
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>1920</width>
+				<height>1080</height>
+				<texture background="true">$INFO[Window().Property(texture.white)]</texture>
+				<colordiffuse>50000000</colordiffuse>
+			</control>
+
+
+		<!-- Side Info -->
+		<control type="group">
+		
+			<!-- Border -->
+			<!--control type="image">
+					<top>12</top>
+					<bottom>12</bottom>
+					<left>1270</left>
+					<width>640</width>
+					<height>1056</height>
+					<texture colordiffuse="gold" border="5">common/outline.png</texture>
+			</control-->
+				
+				<!-- MultiPosterart -->
+				<control type="multiimage">
+					<left>1320</left>
+					<width>550</width>
+					<height>825</height>
+					<top>15</top>
+						<imagepath background="true">$INFO[Control.GetLabel(1011)]</imagepath>
+						<fadetime>2000</fadetime>
+						<loop>yes</loop>
+				</control>
+				
+				<!-- Plot Info -->
+				<control type="textbox">
+					<wrapmultiline>true</wrapmultiline>
+					<top>908</top>
+					<left>1270</left>
+					<height min="50" max="150">auto</height>
+					<width>635</width>
+					<font>font12</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<align>center</align>
+					<label>$INFO[Window().Property(item.info.plot)]</label>
+				</control>
+						
+				<control type="group">
+					<top>635</top>
+					<left>1380</left>
+					<!-- Title -->
+					<!--control type="label">
+						<top></top>
+						<left></left>
+						<width>70</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<scroll>true</scroll>
+						<scrollspeed>40</scrollspeed>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>Title:</label>
+					</control-->
+					<!-- Title (item info) -->
+					<control type="label">
+						<top></top>
+						<left>-75</left>
+						<width min="10" max="580">auto</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<scroll>true</scroll>
+						<scrollspeed>40</scrollspeed>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label> [B]$INFO[Window().Property(item.info.title)][/B]</label>
+					</control>
+				</control>
+				
+				<!-- TV Info -->
+				<control type="group">
+					<top>700</top>
+					<left>1310</left>
+					<visible>!String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.rating)) | String.IsEqual(Window().Property(item.info.rating), 0.0) | String.IsEqual(Window().Property(item.info.rating), None)]</visible>
+					<!-- Season Info -->
+					<control type="label">
+						<top></top>
+						<left>180</left>
+						<width>300</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>!String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.rating)) | String.IsEqual(Window().Property(item.info.rating), 0.0) | String.IsEqual(Window().Property(item.info.rating), None)]</visible-->
+						<label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] </label>
+					</control>
+					<!-- Episode Info -->
+					<control type="label">
+						<top></top>
+						<left>280</left>
+						<width>345</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>!String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.rating)) | String.IsEqual(Window().Property(item.info.rating), 0.0) | String.IsEqual(Window().Property(item.info.rating), None)]</visible-->
+						<label>Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
+					</control>
+					<!-- Aired Info -->
+					<control type="label">
+						<top></top>
+						<left>60</left>
+						<width>400</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<!--visible>!String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.rating)) | String.IsEqual(Window().Property(item.info.rating), 0.0) | String.IsEqual(Window().Property(item.info.rating), None)]</visible-->
+						<label>Aired: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.aired)] [/COLOR]</label>
+					</control>
+					<!-- Rating Info (hidden when 0.0)-->
+					<control type="label">
+						<top></top>
+						<left>400</left>
+						<width>300</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>!String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.rating)) | String.IsEqual(Window().Property(item.info.rating), 0.0) | String.IsEqual(Window().Property(item.info.rating), None)]</visible-->
+						<label></label>
+					</control>
+				</control>
+				
+				<!--visible>!Skin.IsEqual(Skin.String($INFO[Window.Property(item.info.aired)]),0.0)</visible-->
+				
+				<!-- TV Info -->
+				<control type="group">
+					<top>700</top>
+					<left>1250</left>
+					<visible>!String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.rating)) | String.IsEqual(Window().Property(item.info.rating), 0.0) | String.IsEqual(Window().Property(item.info.rating), None)]</visible>
+						<!-- Season Info -->
+						<control type="label">
+							<top></top>
+							<left>170</left>
+							<width>300</width>
+							<font>font12</font>
+							<textcolor>FFFFD700</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible></visible>
+							<label>Season: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.season)] [/COLOR] </label>
+						</control>
+						<!-- Episode Info -->
+						<control type="label">
+							<top></top>
+							<left>260</left>
+							<width>345</width>
+							<font>font12</font>
+							<textcolor>FFFFD700</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible></visible>
+							<label>Episode: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.episode)][/COLOR]</label>
+						</control>
+						<!-- Aired Info -->
+						<control type="label">
+							<top></top>
+							<left>60</left>
+							<width>400</width>
+							<font>font12</font>
+							<textcolor>FFFFD700</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<visible></visible>
+							<label>Aired: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.aired)] [/COLOR]</label>
+						</control>
+						<!-- Rating Info -->
+						<control type="label">
+							<top></top>
+							<left>410</left>
+							<width>300</width>
+							<font>font12</font>
+							<textcolor>FFFFD700</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible></visible>
+							<label>Rating: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]</label>
+						</control>
+				</control>
+				
+				
+				
+				<!-- Movie Info -->
+				<control type="group">
+					<top>700</top>
+					<left>1340</left>
+					<visible>String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
+					<!-- Year  -->
+					<control type="label">
+						<top></top>
+						<left></left>
+						<width>200</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible-->
+						<label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)][/COLOR]</label>
+					</control>
+					<!-- Rating -->
+					<control type="label">
+						<top></top>
+						<left></left>
+						<width>440</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible-->
+						<label>Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]</label>
+					</control>
+					<!-- Certificate -->
+					<control type="label">
+						<top></top>
+						<left></left>
+						<width>750</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible-->
+						<label>Certificate:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.mpaa)][/COLOR]</label>
+					</control>
+				</control>
+					
+					<!-- Movie Info (Hide Certificate if n/a)-->
+				<control type="group">
+					<top>700</top>
+					<left>1430</left>
+					<visible>String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
+					<!-- Year  -->
+					<control type="label">
+						<top></top>
+						<left></left>
+						<width>200</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible-->
+						<label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)][/COLOR]</label>
+					</control>
+					<!-- Rating -->
+					<control type="label">
+						<top></top>
+						<left></left>
+						<width>450</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible-->
+						<label>Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]</label>
+					</control>
+					<!-- Certificate -->
+					<control type="label">
+						<top></top>
+						<left></left>
+						<width>700</width>
+						<font>font12</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<!--visible>String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible-->
+						<label></label>
+					</control>
+				</control>
+
+			<!-- ClearLogo  -->
+			<!--control type="image" id="1001">
+				<top>680</top>
+				<left>1740</left>
+				<width>175</width>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
+			</control-->
+		</control>
+		
+			<!-- Scrollbar  -->
+		<control type="scrollbar" id="17">
+				<left>1245</left>
+				<top>15</top>
+				<width>20</width>
+				<height>1040</height>
+				<visible>true</visible>
+				<texturesliderbackground colordiffuse="70000005" border="4">special://home/userdata/addon_data/plugin.video.seren/skins/MyKodiBuild-Full/resources/skins/media/white.png</texturesliderbackground>
+				<texturesliderbar colordiffuse="70000005" border="4">special://home/userdata/addon_data/plugin.video.seren/skins/MyKodiBuild-Full/resources/skins/media/scrollv.png</texturesliderbar>
+				<texturesliderbarfocus colordiffuse="FFFFD700" border="5">common/outline.png</texturesliderbarfocus>
+				<pulseonselect></pulseonselect>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+				<onleft>1000</onleft>
+		</control>
 			
-            <control type="group">
-                <top>640</top>
-				<left>80</left>
-				<control type="label">
-                    <top>0</top>
-					<left>-80</left>
-                    <width>50</width>
-                    <font>font10</font>
-                    <textcolor>FFFFD700</textcolor>
-					<scroll>true</scroll>
-					<scrollspeed>40</scrollspeed>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label>Title:</label>
-                </control>
-                <control type="label">
-                    <top>0</top>
-					<left>-40</left>
-                    <width min="10" max="455">auto</width>
-                    <font>font10</font>
-                    <textcolor>FFFFD700</textcolor>
-					<scroll>true</scroll>
-					<scrollspeed>40</scrollspeed>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label> [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.title)] [/COLOR]</label>
-                </control>
-                <control type="label">
-                    <top>90</top>
-					<left>-80</left>
-                    <width>450</width>
-                    <font>font10</font>
-                    <textcolor>FFFFD700</textcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
-                    <label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR]  Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]  Certificate:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.mpaa)][/COLOR]
-					</label>
-                </control>
-				<control type="label">
-                    <top>90</top>
-					<left>-80</left>
-                    <width>450</width>
-                    <font>font10</font>
-                    <textcolor>FFFFD700</textcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
-                    <label>Year:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.year)] [/COLOR]  Rating:[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.rating)][/COLOR]  Certificate: N/A[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.mpaa)][/COLOR]
-					</label>
-                </control>
-                <control type="label">
-                    <top>60</top>
-					<left>-80</left>
-                    <width>400</width>
-                    <font>font10</font>
-                    <textcolor>FFFFD700</textcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
-                    <label>Aired: [COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(item.info.aired)] [/COLOR]</label>
-                </control>
 
-                <control type="textbox">
-                    <wrapmultiline>true</wrapmultiline>
-                    <top>260</top>
-                    <left>-100</left>
-                    <height min="50" max="155">auto</height>
-                    <width>645</width>
-                    <font>font10</font>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <align>center</align>
-                    <label>$INFO[Window().Property(item.info.plot)]</label>
-                </control>
-        </control>
 
-        </control>
+			<!-- Sources List -->
+		<control type="list" id="1000">
+				<viewtype label="Sources">list</viewtype>
+				<left>15</left>
+				<top>15</top>
+				<width>1225</width>
+				<height>1040</height>
+				<orientation>vertical</orientation>
+				<focusposition>1</focusposition>
+			<pagecontrol>17</pagecontrol>
+			<onright>17</onright>
+				<itemlayout height="104">
+					<control type="image">
+						<visible>true</visible>
+							<texture background="true" border="5">$INFO[Window().Property(texture.white)]</texture>
+							<colordiffuse>90000005</colordiffuse>
+					</control>
+					<control type="label">
+						<top>25</top>
+						<left>10</left>
+						<width>1090</width>
+						<height>0</height>
+						<font>font12</font>
+						<textcolor>FFFFFFFF</textcolor>
+						<shadowcolor></shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE][B][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Label][/COLOR][/B][/UPPERCASE]</label>
+					</control>
+					<control type="label">
+						<top>70</top>
+						<left>10</left>
+						<width>650</width>
+						<height>0</height>
+						<font>font10</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>Debrid: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(debrid_provider)][/COLOR][/CAPITALIZE]
+						</label>
+					</control>
+					<control type="label">
+						<top>100</top>
+						<left>10</left>
+						<width>650</width>
+						<height>0</height>
+						<aligny>center</aligny>
+						<textcolor>FFFFD700</textcolor>
+						<font>font10</font>
+						<label>Provider: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(provider)][/COLOR][/CAPITALIZE]
+						</label>
+					</control>
+					<control type="label">
+						<top>70</top>
+						<left>380</left>
+						<width>550</width>
+						<height>0</height>
+						<aligny>center</aligny>
+						<textcolor>FFFFD700</textcolor>
+						<shadowcolor>dimgrey</shadowcolor>
+						<font>font10</font>
+						<label>Type: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(type)][/COLOR][/CAPITALIZE]
+						</label>
+					</control>
+					<control type="label">
+						<top>100</top>
+						<left>380</left>
+						<width>550</width>
+						<height>0</height>
+						<aligny>center</aligny>
+						<textcolor>FFFFD700</textcolor>
+						<shadowcolor>dimgrey</shadowcolor>
+						<font>font10</font>
+						<label>Info: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(info)][/COLOR][/CAPITALIZE]
+						</label>
+					</control>
+					<control type="label">
+						<centertop>60%</centertop>
+						<left>920</left>
+						<width>550</width>
+						<height>10</height>
+						<font>font14</font>
+						<textcolor>FFFFD700</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>Size: [COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(size)][/COLOR]
+						</label>
+					</control>
+				  <control type="image">
+						<centertop>50%</centertop>
+						<left>1110</left>
+						<width>110</width>
+						<height>110</height>
+						<texture background="true" colordiffuse="orangered">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualitysd480.png</texture>
+						<visible>String.Contains(ListItem.Property(quality),SD)</visible>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<left>1110</left>
+						<width>110</width>
+						<height>110</height>
+						<texture background="true" colordiffuse="mediumturquoise">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd720.png</texture>
+						<visible>String.Contains(ListItem.Property(quality),720P)</visible>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<left>1110</left>
+						<width>110</width>
+						<height>110</height>
+						<texture background="true" colordiffuse="lawngreen">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
+						<visible>String.Contains(ListItem.Property(quality),1080P)</visible>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<left>1110</left>
+						<width>110</width>
+						<height>110</height>
+						<texture background="true" colordiffuse="gold">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
+						<visible>String.Contains(ListItem.Property(quality),4k)</visible>
+					</control>
 
-        <!-- Top Logo/picture  -->
-        <control type="image" id="1001">
-            <top>680</top>
-            <left>1740</left>
-            <width>175</width>
-            <aspectratio>keep</aspectratio>
-            <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
-        </control>
-	</control>
-        <!-- Scrollbar  -->
-        <control type="scrollbar" id="17">
-      	    <left>1245</left>
-      	    <top>15</top>
-      	    <width>20</width>
-      	    <height>1040</height>
-      	    <visible>true</visible>
-            <texturesliderbackground colordiffuse="70000005" border="4">special://home/userdata/addon_data/plugin.video.seren/skins/SerenMod-Full/resources/skins/media/white.png</texturesliderbackground>
-            <texturesliderbar colordiffuse="90000005" border="4">special://home/userdata/addon_data/plugin.video.seren/skins/SerenMod-Full/resources/skins/media/scrollv.png</texturesliderbar>
-            <texturesliderbarfocus colordiffuse="FF0000005" border="4">special://home/userdata/addon_data/plugin.video.seren/skins/SerenMod-Full/resources/skins/media/scrollv.png</texturesliderbarfocus>
-      	    <pulseonselect></pulseonselect>
-      	    <orientation>vertical</orientation>
-      	    <showonepage>false</showonepage>
-            <onleft>1000</onleft>
-        </control>
+					<control type="image">
+						<width>100%</width>
+						<height>3</height>
+						<bottom>-1</bottom>
+						<texture colordiffuse="9f000000">special://home/addons/plugin.video.seren/resources/skins/resources/skins/media/white.png</texture>
+					 </control>
 
-        <!-- Sources List -->
-        <control type="list" id="1000">
-            <viewtype label="Sources">list</viewtype>
-            <left>15</left>
-            <top>15</top>
-            <width>1225</width>
-            <height>1040</height>
-            <orientation>vertical</orientation>
-            <focusposition>1</focusposition>
-	    <pagecontrol>17</pagecontrol>
-	    <onright>17</onright>
-            <itemlayout height="104">
-	        <control type="image">
-        	    <visible>true</visible>
-                    <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-                    <colordiffuse>90000005</colordiffuse>
-                </control>
-                <control type="label">
-                    <top>25</top>
-                    <left>10</left>
-                    <width>1090</width>
-                    <height>0</height>
-                    <font>font12</font>
-                    <textcolor>FFFFFFFF</textcolor>
-		    <shadowcolor></shadowcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label>[CAPITALIZE][B][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Label][/COLOR][/B][/CAPITALIZE]</label>
-                </control>
-                <control type="label">
-                    <top>70</top>
-                    <left>10</left>
-                    <width>650</width>
-                    <height>0</height>
-                    <font>font10</font>
-                    <textcolor>FFFFD700</textcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label>Debrid: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(debrid_provider)][/COLOR][/CAPITALIZE]
-                    </label>
-                </control>
-                <control type="label">
-                    <top>100</top>
-                    <left>10</left>
-                    <width>650</width>
-                    <height>0</height>
-                    <aligny>center</aligny>
-                    <textcolor>FFFFD700</textcolor>
-                    <font>font10</font>
-                    <label>Provider: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(provider)][/COLOR][/CAPITALIZE]
-                    </label>
-                </control>
-                <control type="label">
-                    <top>70</top>
-                    <left>380</left>
-                    <width>550</width>
-                    <height>0</height>
-                    <aligny>center</aligny>
-                    <textcolor>FFFFD700</textcolor>
-		    <shadowcolor>dimgrey</shadowcolor>
-                    <font>font10</font>
-                    <label>Type: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(type)][/COLOR][/CAPITALIZE]
-                    </label>
-                </control>
-                <control type="label">
-                    <top>100</top>
-                    <left>380</left>
-                    <width>550</width>
-                    <height>0</height>
-                    <aligny>center</aligny>
-                    <textcolor>FFFFD700</textcolor>
-		    <shadowcolor>dimgrey</shadowcolor>
-                    <font>font10</font>
-                    <label>Info: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(info)][/COLOR][/CAPITALIZE]
-                    </label>
-                </control>
-                <control type="label">
-                    <centertop>70%</centertop>
-                    <left>920</left>
-                    <width>550</width>
-                    <height>10</height>
-                    <font>font14</font>
-                    <textcolor>FFFFD700</textcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label>Size: [COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(size)][/COLOR]
-                    </label>
-                </control>
-              <control type="image">
-                    <centertop>50%</centertop>
-                    <left>1110</left>
-                    <width>110</width>
-                    <height>110</height>
-                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualitysd480.png</texture>
-                    <visible>String.Contains(ListItem.Property(quality),SD)</visible>
-                </control>
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <left>1110</left>
-                    <width>110</width>
-                    <height>110</height>
-                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd720.png</texture>
-                    <visible>String.Contains(ListItem.Property(quality),720P)</visible>
-                </control>
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <left>1110</left>
-                    <width>110</width>
-                    <height>110</height>
-                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
-                    <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
-                </control>
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <left>1110</left>
-                    <width>110</width>
-                    <height>110</height>
-                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
-                    <visible>String.Contains(ListItem.Property(quality),4k)</visible>
-                </control>
+				</itemlayout>
 
-                <control type="image">
-                    <width>100%</width>
-                    <height>3</height>
-                    <bottom>-1</bottom>
-                    <texture colordiffuse="9f000000">special://home/addons/plugin.video.seren/resources/skins/resources/skins/media/white.png</texture>
-                 </control>
-
-            </itemlayout>
-
-            <focusedlayout height="104">
-                <control type="image">
-                    <width>100%</width>
-                    <height>100%</height>
-                    <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-                    <colordiffuse>EE000000</colordiffuse>
-                </control>
-                <control type="label">
-                    <top>25</top>
-                    <left>10</left>
-                    <width>1090</width>
-                    <height>0</height>
-                    <font>font12</font>
-                    <textcolor>FFFFFFFF</textcolor>
-		    <shadowcolor></shadowcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label>[CAPITALIZE][B][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Label][/COLOR][/B][/CAPITALIZE]</label>
-                </control>
+			<focusedlayout height="104">
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture background="true">$INFO[Window().Property(texture.white)]</texture>
+					<colordiffuse>EE000000</colordiffuse>
+				</control>
 				<control type="image">
 					<width>100%</width>
 					<height>100%</height>
 					<texture colordiffuse="gold" border="5">common/outline.png</texture>
+					<visible>Control.HasFocus(1000)</visible>
+
 				</control>
-                <control type="label">
-                    <top>70</top>
-                    <left>10</left>
-                    <width>650</width>
-                    <height>0</height>
-                    <font>font10</font>
-                    <textcolor>FFFFD700</textcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label>Debrid: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(debrid_provider)][/COLOR][/CAPITALIZE]
-                    </label>
-                </control>
-                <control type="label">
-                    <top>100</top>
-                    <left>10</left>
-                    <width>650</width>
-                    <height>0</height>
-                    <aligny>center</aligny>
-                    <textcolor>FFFFD700</textcolor>
-                    <font>font10</font>
-                    <label>Provider: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(provider)][/COLOR][/CAPITALIZE]
-                    </label>
-                </control>
-                <control type="label">
-                    <top>70</top>
-                    <left>380</left>
-                    <width>550</width>
-                    <height>0</height>
-                    <aligny>center</aligny>
-                    <textcolor>FFFFD700</textcolor>
-		    <shadowcolor>dimgrey</shadowcolor>
-                    <font>font10</font>
-                    <label>Type: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(type)][/COLOR][/CAPITALIZE]
-                    </label>
-                </control>
-                <control type="label">
-                    <top>100</top>
-                    <left>380</left>
-                    <width>550</width>
-                    <height>0</height>
-                    <aligny>center</aligny>
-                    <textcolor>FFFFD700</textcolor>
-		    <shadowcolor>dimgrey</shadowcolor>
-                    <font>font10</font>
-                    <label>Info: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(info)][/COLOR][/CAPITALIZE]
-                    </label>
-                </control>
-                <control type="label">
-                    <centertop>70%</centertop>
-                    <left>920</left>
-                    <width>550</width>
-                    <height>10</height>
-                    <font>font14</font>
-                    <textcolor>FFFFD700</textcolor>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <label>Size: [COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(size)][/COLOR]
-                    </label>
-                </control>
-              <control type="image">
-                    <centertop>50%</centertop>
-                    <left>1110</left>
-                    <width>110</width>
-                    <height>110</height>
-                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualitysd480.png</texture>
-                    <visible>String.Contains(ListItem.Property(quality),SD)</visible>
-                </control>
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <left>1110</left>
-                    <width>110</width>
-                    <height>110</height>
-                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd720.png</texture>
-                    <visible>String.Contains(ListItem.Property(quality),720P)</visible>
-                </control>
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <left>1110</left>
-                    <width>110</width>
-                    <height>110</height>
-                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
-                    <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
-                </control>
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <left>1110</left>
-                    <width>110</width>
-                    <height>110</height>
-                    <texture background="true" colordiffuse="">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
-                    <visible>String.Contains(ListItem.Property(quality),4k)</visible>
-                </control>
+				<control type="label">
+					<top>25</top>
+					<left>10</left>
+					<width>1090</width>
+					<height>0</height>
+					<font>font12</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<shadowcolor></shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[UPPERCASE][B][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Label][/COLOR][/B][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<top>70</top>
+					<left>10</left>
+					<width>650</width>
+					<height>0</height>
+					<font>font10</font>
+					<textcolor>FFFFD700</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>Debrid: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(debrid_provider)][/COLOR][/CAPITALIZE]
+					</label>
+				</control>
+				<control type="label">
+					<top>100</top>
+					<left>10</left>
+					<width>650</width>
+					<height>0</height>
+					<aligny>center</aligny>
+					<textcolor>FFFFD700</textcolor>
+					<font>font10</font>
+					<label>Provider: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(provider)][/COLOR][/CAPITALIZE]
+					</label>
+				</control>
+				<control type="label">
+					<top>70</top>
+					<left>380</left>
+					<width>550</width>
+					<height>0</height>
+					<aligny>center</aligny>
+					<textcolor>FFFFD700</textcolor>
+					<shadowcolor>dimgrey</shadowcolor>
+					<font>font10</font>
+					<label>Type: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(type)][/COLOR][/CAPITALIZE]
+					</label>
+				</control>
+				<control type="label">
+					<top>100</top>
+					<left>380</left>
+					<width>550</width>
+					<height>0</height>
+					<aligny>center</aligny>
+					<textcolor>FFFFD700</textcolor>
+					<shadowcolor>dimgrey</shadowcolor>
+					<font>font10</font>
+					<label>Info: [CAPITALIZE][COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(info)][/COLOR][/CAPITALIZE]
+					</label>
+				</control>
+				<control type="label">
+					<centertop>60%</centertop>
+					<left>920</left>
+					<width>550</width>
+					<height>10</height>
+					<font>font14</font>
+					<textcolor>FFFFD700</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>Size: [COLOR $INFO[Window().Property(settings.color)]]$INFO[ListItem.Property(size)][/COLOR]
+					</label>
+				</control>
+			  <control type="image">
+					<centertop>50%</centertop>
+					<left>1110</left>
+					<width>110</width>
+					<height>110</height>
+					<texture background="true" colordiffuse="orangered">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualitysd480.png</texture>
+					<visible>String.Contains(ListItem.Property(quality),SD)</visible>
+					<animation effect="zoom" end="115%" center="auto" time="100" >Focus</animation>
+				</control>
+				<control type="image">
+					<centertop>50%</centertop>
+					<left>1110</left>
+					<width>110</width>
+					<height>110</height>
+					<texture background="true" colordiffuse="mediumturquoise">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd720.png</texture>
+					<visible>String.Contains(ListItem.Property(quality),720P)</visible>
+					<animation effect="zoom" end="115%" center="auto" time="100" >Focus</animation>
+				</control>
+				<control type="image">
+					<centertop>50%</centertop>
+					<left>1110</left>
+					<width>110</width>
+					<height>110</height>
+					<texture background="true" colordiffuse="lawngreen">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd1080.png</texture>
+					<animation effect="zoom" end="115%" center="auto" time="100" >Focus</animation>
+					<visible>String.Contains(ListItem.Property(quality),1080P)</visible>
+				</control>
+				<control type="image">
+					<centertop>50%</centertop>
+					<left>1110</left>
+					<width>110</width>
+					<height>110</height>
+					<texture background="true" colordiffuse="gold">$INFO[Window().Property(skin.dir)]/resources/skins/media/quality/qualityhd4k.png</texture>
+					<animation effect="zoom" end="115%" center="auto" time="100" >Focus</animation>
+					<visible>String.Contains(ListItem.Property(quality),4k)</visible>
+				</control>
+			</focusedlayout>
+		</control>
 
-            </focusedlayout>
-        </control>
-
-        <!--LAYOUT GRID-->
-        <!--<control type="image">-->
-        <!--<width>100%</width>-->
-        <!--<height>100%</height>-->
-        <!--<texture background="true">$INFO[Window(13000).Property(test_pattern)]</texture>-->
-        <!--<colordiffuse>55FFFFFF</colordiffuse>-->
-        <!--</control>-->
+			<!--LAYOUT GRID-->
+			<!--<control type="image">-->
+			<!--<width>100%</width>-->
+			<!--<height>100%</height>-->
+			<!--<texture background="true">$INFO[Window(13000).Property(test_pattern)]</texture>-->
+			<!--<colordiffuse>55FFFFFF</colordiffuse>-->
+			<!--</control>-->
     </controls>
 </window>

@@ -9,6 +9,8 @@
 | **Seren** |   v 1.3.6   | v 1.4.8 or above |
 |**Auramod**|  v 0.9.35   | v 0.9.35 or above|
 
+To Maximise the artwork available  whe using this theme within Seren Settings please change the slider in artwork for both movie and tv show, in advanced settings to 10 and 20 respectively  for poster and fanart.
+
 
 **_This theme Has not been tested and won't be supported on any skin besides AuraMod , use at your on risk with other skins._**
 

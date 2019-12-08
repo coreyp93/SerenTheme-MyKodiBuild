@@ -8,6 +8,8 @@
 			<animation type="WindowOpen" reversible="false">
 				<effect type="fade" start="0" end="100" time="300" />
 				<effect type="slide" start="400%,0" end="0,0" time="400" />
+				<effect type="zoom" start="10,10,70%,70%" center="1900,10" time="7000" delay="400"/>
+				<!--effect type="zoom" end="10,10,100%,100%" center="1900,10" time="1500" delay="1000"/-->
 			</animation>
 			<animation type="WindowClose" reversible="false">
 				<effect type="fade" start="100" end="0" time="400" />
@@ -16,8 +18,8 @@
 			<control type="group">
 				<height>25%</height>
 				<width>25%</width>
-				<right>0</right>
-				<bottom>10%</bottom>
+				<right>10</right>
+				<top>10</top>
 				<!-- Background -->
 				<control type="image">
 					<top>0</top>
@@ -34,6 +36,7 @@
 					<control type="image">
 						<width>100%</width>
 						<height>100%</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<texture colordiffuse="FF12A0C7">$INFO[Window.Property(texture.white)]</texture>
 						<visible>String.IsEmpty(Window.Property(item.art.thumb)) + String.IsEmpty(Window.Property(item.art.landscape)) + String.IsEmpty(Window.Property(item.art.fanart))</visible>
 					</control>
@@ -99,7 +102,7 @@
 						<height>35</height>
 						<aligny>center</aligny>
 						<font>font25_title</font>
-						<textcolor>eeffffff</textcolor>
+						<textcolor>FFFFD700</textcolor>
 						<shadowcolor>00000000</shadowcolor>
 						<label>Playing in [COLOR $INFO[Window.Property(settings.color)]]$INFO[Player.TimeRemaining(ss),,][/COLOR] seconds</label>
 						<visible>!Integer.IsGreater(Player.TimeRemaining,59)</visible>
@@ -136,7 +139,7 @@
 							<!--<height>35</height>-->
 							<!--<aligny>center</aligny>-->
 							<!--<font>font12</font>-->
-							<!--<textcolor>eeffffff</textcolor>-->
+							<!--<textcolor>FFFFD700</textcolor>-->
 							<!--<shadowcolor>00000000</shadowcolor>-->
 							<!--<label>$INFO[Window.Property(item.info.year),,   ]</label>-->
 							<!--<visible>!String.IsEmpty(Window.Property(item.info.year))</visible>-->
@@ -155,7 +158,7 @@
 							<aligny>center</aligny>
 							<label>$INFO[Window.Property(item.info.rating), ,   ]</label>
 							<font>font12</font>
-							<textcolor>eeffffff</textcolor>
+							<textcolor>FFFFD700</textcolor>
 							<shadowcolor>00000000</shadowcolor>
 							<visible>!String.IsEmpty(Window.Property(item.info.rating))</visible>
 						</control>
@@ -163,46 +166,50 @@
 					<!-- Buttons -->
 					<control type="grouplist">
 						<orientation>horizontal</orientation>
-						<height>56</height>
+						<height>46</height>
 						<bottom>20</bottom>
 						<left>0</left>
 						<itemgap>10</itemgap>
 						<width>100%</width>
 						<control type="button" id="3001">
 							<label>Play Now</label>
-							<height>56</height>
+							<height min="50">auto</height>
 							<width min="50">auto</width>
 							<font>font20_title</font>
 							<textoffsetx>55</textoffsetx>
-							<textcolor>ddffffff</textcolor>
-							<focusedcolor>eeffffff</focusedcolor>
-							<selectedcolor>ddffffff</selectedcolor>
+							<textcolor>BBFFD700</textcolor>
+							<focusedcolor>FFFFD700</focusedcolor>
+							<selectedcolor>FFFFD700</selectedcolor>
 							<shadowcolor>22000000</shadowcolor>
 							<aligny>center</aligny>
 							<align>center</align>
-							<texturefocus border="10" colordiffuse="$INFO[Window.Property(settings.color)]">white.png</texturefocus>
-							<texturenofocus border="10" colordiffuse="AA212121">white.png</texturenofocus>
-							<alttexturefocus border="10" colordiffuse="$INFO[Window.Property(settings.color)]">white.png</alttexturefocus>
-							<alttexturenofocus border="10" colordiffuse="AA212121">white.png</alttexturenofocus>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+							<texturenofocus border="5" colordiffuse="AA212121">white.png</texturenofocus>
+							<alttexturefocus border="5" colordiffuse="$INFO[Window.Property(settings.color)]">white.png</alttexturefocus>
+							<alttexturenofocus border="5" colordiffuse="AA212121">white.png</alttexturenofocus>
 							<pulseonselect>no</pulseonselect>
+							<animation effect="zoom" end="115,115" center="auto" time="100" delay="">Focus</animation>
+							<animation effect="zoom" end="90,90" center="auto" time="100" delay="">UnFocus</animation>
 						</control>
 						<control type="button" id="3002">
 							<label>Close</label>
-							<height>56</height>
+							<height min="50">auto</height>
 							<width min="50">auto</width>
 							<font>font20_title</font>
 							<textoffsetx>15</textoffsetx>
-							<textcolor>ddffffff</textcolor>
-							<focusedcolor>eeffffff</focusedcolor>
-							<selectedcolor>ddffffff</selectedcolor>
+							<textcolor>BBFFD700</textcolor>
+							<focusedcolor>FFFFD700</focusedcolor>
+							<selectedcolor>BBFFD700</selectedcolor>
 							<shadowcolor>22000000</shadowcolor>
 							<aligny>center</aligny>
 							<align>center</align>
-							<texturefocus border="10" colordiffuse="$INFO[Window.Property(settings.color)]">white.png</texturefocus>
-							<texturenofocus border="10" colordiffuse="AA212121">white.png</texturenofocus>
-							<alttexturefocus border="10" colordiffuse="$INFO[Window.Property(settings.color)]">white.png</alttexturefocus>
-							<alttexturenofocus border="10" colordiffuse="AA212121">white.png</alttexturenofocus>
+							<texturefocus colordiffuse="gold" border="5">common/outline.png</texturefocus>
+							<texturenofocus border="5" colordiffuse="AA212121">white.png</texturenofocus>
+							<alttexturefocus border="5" colordiffuse="$INFO[Window.Property(settings.color)]">white.png</alttexturefocus>
+							<alttexturenofocus border="5" colordiffuse="AA212121">white.png</alttexturenofocus>
 							<pulseonselect>no</pulseonselect>
+							<animation effect="zoom" end="115,115" center="auto" time="100" delay="">Focus</animation>
+							<animation effect="zoom" end="90,90" center="auto" time="100" delay="">UnFocus</animation>
 						</control>
 					</control>
 					<!--<control type="image">-->
