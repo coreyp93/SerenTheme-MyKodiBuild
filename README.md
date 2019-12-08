@@ -20,7 +20,7 @@ To install this theme in Seren, navigate to:
 
 And enter one of the following URL:
 
-https://www.github.com/Coreyp93/SerenTheme-MyKodiBuild/zipball/SerenTheme-MyKodiBuild Feature-Updates2/
+https://www.github.com/Coreyp93/SerenTheme-MyKodiBuild/zipball/Feature-Updates2/
 
 You can also download the `.zip` file directly from the same URL, and install it from:
 
